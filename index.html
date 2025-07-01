@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLM Cyber - Guilherme Alves</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul><!---MENU PARA GUIAR A PÁGINA--->
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main><!---TELA PRINCIPAL COMO APRESENTAÇÃO--->
+        <section id="intro" class="section-container intro-section">
+             <div class="content">
+                <h1>Guilherme Alves</h1>
+                <p>Seja bem-vindo(a) ao meu hub de projetos voltados para Cibersegurança e Programação.</p>
+            </div>
+        </section>
+
+        <section id="sobre" class="section-container"><!---INICIO DA SEÇÃO SOBRE MIM--->
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="sobre-mim-content">
+                <div class="sobre-mim-texto">
+                    <p>Olá! Me chamo Guilherme, tenho 26 anos atualmente, sempre fui entusiasta da tecnologia, descobri essa paixão ainda criança, quando tive os primeiros contatos com videogames de cartuchos e computadores que possuíam poucos recursos na época. Durante meus estudos sobre a tecnologia eu descobri uma nova paixão, a cibersegurança, com tanto avanço tecnológico, muitas vulnerabilidades surgiram e consequentemente a necessidade de pessoas para mitigar esses riscos e ataques.</p>
+                    <p>Atualmente estou focado em aprender programação com foco em segurança, automação de scripts, análise de vulnerabilidades, respostas a incidentes, etc. Em breve postarei nesta página alguns projetos com esse intuito, fique a vontade para explorar e até mais!</p>
+                </div>
+                <div class="sobre-mim-foto">
+                    <img src="images/foto sobre mim.png" alt="Foto de Guilherme Alves">
+                </div>
+            </div>
+        </section>
+
+        <section id="formacao" class="section-container"><!---INICIO DA SEÇÃO DE FORMAÇÃO--->
+            <h2 class="section-title">Formação e Certificados</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Análise e Desenv. de Sistemas</h3>
+                    <p>UNINTER, 2025, EM CURSO</p>
+                </div>
+                <div class="card">
+                    <h3>Cibersegurança</h3>
+                    <p>Google - Coursera, 2025, EM CURSO</p>
+                </div>
+                 <div class="card">
+                    <h3>Curso de Programação Python</h3>
+                    <p>Udemy, 2025, EM CURSO</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section-container"><!---INICIO DA SEÇÃO DE PORTFÓLIO--->
+            <h2 class="section-title">Portfólio de Projetos</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Auditorias e respostas a incidentes</h3>
+                    <p>Auditorias para conformidade com normas como PCI DSS, GDPR, SOC 2 e respostas a ataques de força bruta em site, DDoS e outros.</p>
+                    <a href="https://github.com/GLM-Cyber/respostasIncidentes.git" class="card-link">Ver no GitHub</a>
+                </div>
+                <div class="card">
+                    <h3>Programação com Python</h3>
+                    <p>Em breve...</p>
+                    <a href="#" class="card-link">Ver no GitHub</a>
+                </div>
+                <div class="card">
+                    <h3>Laboratórios práticos de cibersegurança</h3>
+                    <p>Em breve...</p>
+                    <a href="#" class="card-link">Ver no GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="section-container"><!---INICIO DA SEÇÃO DE CONTATO COM FORMULÁRIO--->
+            <h2 class="section-title">Contato</h2>
+            <p class="contato-subtitulo">Vamos conversar! Preencha o formulário abaixo para me enviar uma mensagem no WhatsApp.</p>
+            <form id="whatsapp-form" class="contact-form">
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Sua mensagem..." required></textarea>
+                <button type="submit">Enviar via WhatsApp</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - GLM Cyber - Guilherme Alves dos Santos</p>
+    </footer>
+
+    <script> //COM ESSE SCRIPT É POSSÍVEL ENVIAR DIRETAMENTE A MENSAGEM PARA O MEU WHATSAPP
+        document.getElementById('whatsapp-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+        
+            const numeroTelefone = '5583989006020'; 
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            const textoFormatado = `Olá, meu nome é ${nome}. Gostaria de falar sobre: ${mensagem}`;
+            
+            // Codifica o texto para ser usado em uma URL
+            const textoCodificado = encodeURIComponent(textoFormatado);
+
+            // Cria o link do WhatsApp
+            const urlWhatsApp = `https://wa.me/${numeroTelefone}?text=${textoCodificado}`;
+
+            // Abre o link em uma nova aba
+            window.open(urlWhatsApp, '_blank');
+        });
+    </script>
+</body>
+</html>

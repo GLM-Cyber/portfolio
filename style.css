@@ -1,0 +1,262 @@
+/* Importando fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@400;700&display=swap');
+
+/* --- Reset e Configurações Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    background-color: #020a14; /* Cor de fundo caso a imagem falhe */
+    color: #e0e0e0;
+    
+    /* Imagem de fundo com temática de cibersegurança */
+    background-image: linear-gradient(rgba(2, 10, 20, 0.8), rgba(2, 10, 20, 0.95)), url(/images/ciber.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito parallax suave */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Cabeçalho e Navegação --- */
+header {
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2); /* Linha sutil de neon */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    font-family: 'Share Tech Mono', monospace; /* Fonte tecnológica para os links */
+    color: #00ffff; 
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out; /* Transição suave para os efeitos */
+}
+
+/* Efeito de hover nos links */
+nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.8); /* Efeito de brilho (glow) */
+    background-color: rgba(0, 255, 255, 0.1);
+    border-color: rgba(0, 255, 255, 0.4);
+    border-radius: 4px;
+}
+
+/* --- Conteúdo Principal --- */
+main {
+    flex: 1; /* Faz o conteúdo principal ocupar o espaço disponível */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.content h1 {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6); /* Efeito de brilho no título */
+    margin-bottom: 1rem;
+    animation: pulse-glow 4s infinite alternate; /* Animação sutil de pulsação */
+}
+
+.content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    line-height: 1.6;
+    color: #c0c0c0;
+}
+
+/* --- Animação do Título --- */
+@keyframes pulse-glow {
+    from {
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+    }
+}
+
+/* --- Rodapé --- */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    border-top: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+
+
+/* Faz o header ficar fixo no topo durante a rolagem */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(2, 10, 20, 0.8); /* Fundo para não ficar transparente */
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco no header */
+}
+
+/* Garante que o conteúdo não seja escondido pelo header fixo */
+section[id] {
+    scroll-margin-top: 100px;
+}
+
+/* Container padrão para cada seção de conteúdo */
+.section-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 4rem auto; /* Espaçamento entre seções */
+    padding: 2rem;
+    text-align: left;
+}
+
+.section-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 2.5rem;
+    color: #00ffff;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+.intro-section {
+    min-height: calc(100vh - 120px); /* Ajusta a altura da seção inicial */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* --- Estilos para a Seção "Sobre Mim" --- */
+.sobre-mim-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap; 
+}
+
+.sobre-mim-texto {
+    flex: 2; /* Ocupa 2/3 do espaço */
+    line-height: 1.7;
+}
+
+.sobre-mim-foto {
+    flex: 1; /* Ocupa 1/3 do espaço */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre-mim-foto img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 50%; /* Foto redonda */
+    border: 3px solid #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* --- Estilos para Cards (Formação e Portfólio) --- */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: rgba(0, 40, 60, 0.4);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 320px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 255, 255, 0.6);
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.1);
+}
+
+.card h3 {
+    color: #00ffff;
+    margin-bottom: 0.5rem;
+}
+
+.card .card-link {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+/* --- Estilos para Formulário de Contato --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto; /* Centraliza o formulário */
+}
+
+.contato-subtitulo {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #c0c0c0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: rgba(0, 20, 30, 0.7);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    color: #e0e0e0;
+    padding: 1rem;
+    border-radius: 4px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #00ffff;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+.contact-form button {
+    background-color: #00ffff;
+    color: #020a14;
+    border: none;
+    padding: 1rem;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
