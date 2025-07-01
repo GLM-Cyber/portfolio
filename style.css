@@ -260,3 +260,63 @@ section[id] {
     background-color: #ffffff;
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
 }
+
+
+/* --- REGRAS DE RESPONSIVIDADE PARA CELULAR --- */
+
+
+/* Estes estilos serão aplicados apenas em telas com largura máxima de 768px */
+@media (max-width: 768px) {
+
+    /* --- AJUSTES GERAIS E FONTES --- */
+    .section-title {
+        font-size: 2rem; /* Diminui o tamanho dos títulos de seção */
+    }
+
+    .intro-section .content h1 {
+        font-size: 2.5rem; /* Diminui o título principal */
+    }
+
+    /* --- CABEÇALHO E NAVEGAÇÃO --- */
+    header nav ul {
+        gap: 0.5rem; /* Diminui o espaço entre os links do menu */
+        flex-wrap: wrap; /* Permite que o menu quebre a linha se necessário */
+        justify-content: center;
+        padding: 0 1rem;
+    }
+
+    header nav a {
+        font-size: 1rem; /* Diminui um pouco a fonte do menu */
+        padding: 0.5rem 0.8rem;
+    }
+
+
+    /* --- SEÇÃO "SOBRE MIM" --- */
+    /* Empilha o texto e a foto um sobre o outro */
+    .sobre-mim-content {
+        flex-direction: column;
+        text-align: center; /* Centraliza o texto quando empilhado */
+    }
+
+    .sobre-mim-foto {
+        margin-top: 2rem; /* Adiciona um espaço entre o texto e a foto */
+    }
+    
+
+    /* --- CARDS (FORMAÇÃO E PORTFÓLIO) --- */
+    .cards-container {
+        flex-direction: column; /* Empilha os cards */
+        align-items: center; /* Centraliza os cards empilhados */
+    }
+
+    .card {
+        width: 90%; /* Faz o card ocupar quase toda a largura da tela */
+        max-width: 350px; /* Mas não deixa passar de 350px */
+    }
+
+
+    /* --- FORMULÁRIO DE CONTATO --- */
+    .contact-form {
+        width: 90%; /* Ajusta a largura do formulário */
+    }
+}
